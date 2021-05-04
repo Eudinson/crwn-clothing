@@ -5,28 +5,34 @@ import Homepage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up';
-import { auth } from './firebase/firebase.utility';
+import { auth, createUserProfileDocument } from './firebase/firebase.utility';
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState('');
+  const [currentUser, setCurrentUser] = useState(null);
 
-  let unsubscribeFromAuth = useRef(null);
+  let UnsubscribeFromAuth = () => useRef(null)
 
   useEffect(() => {
  
-    unsubscribeFromAuth.current = auth.onAuthStateChanged(user => {
-      setCurrentUser(user)
+    UnsubscribeFromAuth.current = auth.onAuthStateChanged(async userAuth => {
+      if(userAuth){
+        const userRef = await createUserProfileDocument(userAuth)
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
+          })
+        })
+      }
+      setCurrentUser(userAuth)
     })
 
     // same as component will unmount in class component
     return () => {
-      unsubscribeFromAuth()
+      UnsubscribeFromAuth()
     }
-
   }, [])
-
-  console.log(currentUser);
 
   return (
     <div className="App">
