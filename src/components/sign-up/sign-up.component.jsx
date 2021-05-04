@@ -25,7 +25,7 @@ const SignUp = () => {
         try{
             const { user } = await auth.createUserWithEmailAndPassword(email, password)
             await createUserProfileDocument(user, { displayName })
-            setSignUp({})
+            setSignUp({ displayName:'', email:'', password:'', confirmPassword:'' })
         }catch(err){
             console.log(err.message)
         }
@@ -43,38 +43,38 @@ const SignUp = () => {
 
             <form action="" className="sign-up-form" onSubmit={onInputSubmit}>
                 <FormInput
-                    type = 'text'
-                    name='displayName'
+                    type = "text"
+                    name="displayName"
                     value={signUp.displayName}
                     onChange={onInputChange}
-                    label='Display Name'
+                    label="Display Name"
                     required
                 />
 
                   <FormInput
-                    type = 'email'
-                    name='email'
+                    type = "email"
+                    name="email"
                     value={signUp.email}
                     onChange={onInputChange}
-                    label='Email'
+                    label="Email"
                     required
                 />
 
                   <FormInput
-                    type = 'password'
-                    name='password'
+                    type = "password"
+                    name="password"
                     value={signUp.password}
                     onChange={onInputChange}
-                    label='Password'
+                    label="Password"
                     required
                 />
 
                   <FormInput
-                    type = 'password'
-                    name='confirmPassword'
+                    type = "password"
+                    name="confirmPassword"
                     value={signUp.confirmPassword}
                     onChange={onInputChange}
-                    label='Confirm Password'
+                    label="Confirm Password"
                     required
                 />
 
