@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Homepage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up';
 import { auth, createUserProfileDocument } from './firebase/firebase.utility';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
 function App() {
 
   const [userState, setUserState] = useState(null)
+  const currentUser = useSelector(state => state.user.currentUser)
 
   const dispatch = useDispatch()
   dispatch(setCurrentUser(userState))
@@ -45,7 +46,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Homepage}/>
         <Route path='/shop' component={ShopPage}/>
-        <Route path='/signin' component={SignInAndSignUpPage}/>
+        <Route exact path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
       </Switch>
     </div>
   )
