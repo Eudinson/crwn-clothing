@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.utility';
 import './header.styles.scss';
+import { useSelector } from 'react-redux';
 
-const Header = ({ currentUser }) => {
-    return(
+const Header = () => {
+
+    const currentUser = useSelector(state => state.user.currentUser)
+
+    return (
         <div className="header">
             <Link to="/">
                 <Logo className="logo" />
@@ -19,9 +23,9 @@ const Header = ({ currentUser }) => {
                 </Link>
                 {
                     currentUser ?
-                    <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
-                    :
-                    <Link className="option" to="/signin">SIGN IN</Link>
+                        <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
+                        :
+                        <Link className="option" to="/signin">SIGN IN</Link>
                 }
             </div>
         </div>
