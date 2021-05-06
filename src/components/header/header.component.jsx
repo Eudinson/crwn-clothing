@@ -10,6 +10,7 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 const Header = () => {
 
     const currentUser = useSelector(state => state.user.currentUser)
+    const cartShowHide = useSelector(state => state.cart.hidden)
 
     return (
         <div className="header">
@@ -31,7 +32,7 @@ const Header = () => {
                 }
                 <CartIcon />
             </div>
-            <CartDropdown />
+            {!cartShowHide && <CartDropdown />}
         </div>
     )
 }
