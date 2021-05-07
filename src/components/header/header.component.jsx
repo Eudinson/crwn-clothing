@@ -6,11 +6,16 @@ import './header.styles.scss';
 import { useSelector } from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 const Header = () => {
 
-    const currentUser = useSelector(state => state.user.currentUser)
-    const cartShowHide = useSelector(state => state.cart.hidden)
+    // const currentUserState = useSelector(state => state)
+    const currentUser = selectCurrentUser(useSelector(state => state))
+
+    // const cartShowHideState = useSelector(state => state)
+    const cartShowHide = selectCartHidden(useSelector(state => state))
 
     return (
         <div className="header">
