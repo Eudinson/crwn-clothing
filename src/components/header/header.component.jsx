@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../../assets/crown.svg';
+import Logo from '../../assets/logo_2.png';
 import { auth } from '../../firebase/firebase.utility';
 import './header.styles.scss';
 import { useSelector } from 'react-redux';
@@ -20,7 +20,10 @@ const Header = () => {
     return (
         <div className="header">
             <Link to="/">
-                <Logo className="logo" />
+                <div className="logo-container">
+                    <img src={Logo} alt="" className="logo" />
+                    <span>Demo Shop</span>
+                </div>
             </Link>
             <div className="options">
                 <Link className="option" to="/shop">
