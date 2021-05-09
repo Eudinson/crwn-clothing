@@ -1,5 +1,6 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import { auth } from '../../firebase/firebase.utility';
 
 const StripeCheckoutButton = ({ price }) => {
     
@@ -23,6 +24,7 @@ const StripeCheckoutButton = ({ price }) => {
             panelLabel='Pay Now'
             token={onToken}
             stripeKey={publishableKey}
+            email={auth.currentUser.email}
         />
     )
 }
