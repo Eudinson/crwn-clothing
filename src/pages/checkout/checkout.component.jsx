@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 import { Link } from 'react-router-dom'
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 const CheckoutPage = () => {
 
+    const currentUser = selectCurrentUser(useSelector(state => state))
     const cartItems = selectCartItems(useSelector(state => state))
     const total = selectCartTotal(useSelector(state => state))
 
@@ -40,21 +42,25 @@ const CheckoutPage = () => {
                 <span>TOTAL: ${total}</span>
             </div>
             {
-                total === 0 
-                ? 
+
+                !currentUser ? 
+                <Link className="option" to="/signin" style={{color:'red', borderBottom:'1px solid red'}}>Please click here sign in to your account.</Link> 
+                :
+                total === 0
+                ?
                 <div className="test-warning-container">
                     <h3>Your Cart in empty</h3>
                     <Link to='/shop'>
                         <span className="go-to-shop">Go to shop</span>
                     </Link>
-                </div> 
-                :
+                </div>
+                    :
                 <div className="test-warning-container">
                     <div className="test-warning">
                         *Please use the following test credit card for payments*
-                    <br />
-                    4242 4242 4242 4242 - Exp: 01/23 - CVV: 4242
-                    </div>
+                        <br />
+                        4242 4242 4242 4242 - Exp: 01/23 - CVV: 4242
+                        </div>
                     <StripeCheckoutButton price={total} />
                 </div>
             }

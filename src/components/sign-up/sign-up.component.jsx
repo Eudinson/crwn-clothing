@@ -13,6 +13,8 @@ const SignUp = () => {
         confirmPassword: ''
     })
 
+    const [errorMessage, setErrorMessage] = useState('')
+
     const onInputSubmit = async (e) => {
         e.preventDefault()
         const { displayName, email, password, confirmPassword } = signUp
@@ -28,6 +30,7 @@ const SignUp = () => {
             setSignUp({ displayName:'', email:'', password:'', confirmPassword:'' })
         }catch(err){
             console.log(err.message)
+            setErrorMessage(error => error = err.message)
         }
     }
 
@@ -40,6 +43,7 @@ const SignUp = () => {
         <div className="sign-up">
             <h2 className="title">I do not have an account</h2>
             <span>Sign up with your email and password</span>
+            <span className="error-message">{errorMessage}</span>
 
             <form action="" className="sign-up-form" onSubmit={onInputSubmit}>
                 <FormInput
@@ -78,9 +82,10 @@ const SignUp = () => {
                     required
                 />
 
-                <CustomButton type="submit">SIGN UP</CustomButton>
+                <CustomButton type="submit" style={{width:'100%'}}>SIGN UP</CustomButton>
 
             </form>
+
         </div>
     )
 }

@@ -9,6 +9,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utility';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import CheckoutPage from './pages/checkout/checkout.component';
+import Footer from './pages/footer/footer.component';
 // import { selectCurrentUser } from './redux/user/user.selectors';
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <Redirect to='/'/>
         </Route>
       </Switch>
+      <Footer />
     </div>
   )
 }
