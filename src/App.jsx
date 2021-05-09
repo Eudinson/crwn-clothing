@@ -53,7 +53,7 @@ function App() {
         <Route exact path='/checkout' component={CheckoutPage}/>
         <Route exact path='/signin' render={ () => currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage /> } />
         <Route path='*'> 
-          <Redirect to={Homepage}/>
+          <Redirect to='/'/>
         </Route>
       </Switch>
     </div>
