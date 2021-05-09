@@ -24,11 +24,11 @@ const Header = () => {
                 </div>
             </Link>
             <div className="options">
+                <Link className="option" to="/">
+                    MENU
+                </Link>
                 <Link className="option" to="/shop">
                     SHOP
-                </Link>
-                <Link className="option" to="/contact">
-                    CONTACT
                 </Link>
                 {
                     currentUser ?
