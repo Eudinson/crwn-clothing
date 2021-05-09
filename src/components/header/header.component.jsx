@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/logo_2.png';
 import { auth } from '../../firebase/firebase.utility';
 import './header.styles.scss';
 import { useSelector } from 'react-redux';
@@ -21,7 +20,6 @@ const Header = () => {
         <div className="header">
             <Link to="/">
                 <div className="logo-container">
-                    {/* <img src={Logo} alt="" className="logo" /> */}
                     <span>Demo Shop</span>
                 </div>
             </Link>

@@ -52,6 +52,9 @@ function App() {
         <Route path='/shop' component={ShopPage}/>
         <Route exact path='/checkout' component={CheckoutPage}/>
         <Route exact path='/signin' render={ () => currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage /> } />
+        <Route path='*'> 
+          <Redirect to={Homepage}/>
+        </Route>
       </Switch>
     </div>
   )
