@@ -25,6 +25,10 @@ const Header = () => {
         setWindowSize(winSize => winSize= window.innerWidth)
     })
 
+    window.addEventListener('load', () => {
+        setWindowSize(winSize => winSize= window.innerWidth)
+    })
+
     // const currentUserState = useSelector(state => state)
     const currentUser = selectCurrentUser(useSelector(state => state))
 
