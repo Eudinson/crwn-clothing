@@ -4,3 +4,10 @@
   align-items: center;
   padding: 20px 80px;
 }
+
+@media(max-width:900px){
+  .homepage{
+    margin-top: 90px;
+    padding: 0;
+  }
+}

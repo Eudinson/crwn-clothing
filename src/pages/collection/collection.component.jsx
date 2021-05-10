@@ -13,7 +13,7 @@ const CollectionPage = ({match}) => {
 
     return(
         <div className="collection-page">
-            <h1>{title}</h1>
+            <h1 className="">{title}</h1>
             <div className="items">
                 {
                     items.map(item => <CollectionItem key={ item.id } item={ item }/>)

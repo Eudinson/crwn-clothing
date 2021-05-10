@@ -13,24 +13,23 @@ const CartDropdown = ({ history }) => {
     const cartItems = selectCartItems(useSelector(state => state))
     const dispatch = useDispatch();
 
-    return(
-        <div className="cart-dropdown">
-            <div className="cart-items"> 
-                { 
-                    cartItems.length ? 
-                    cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem} />)
-                    :
-                    <span className="empty-message">Your cart is empty</span>
-                }    
-            </div> 
-                <CustomButton 
-                onClick={() => 
-                    { 
-                        history.push('/checkout');
-                        dispatch(toggleCartHidden()) 
+    return (
+            <div className="cart-dropdown">
+                <div className="cart-items">
+                    {
+                        cartItems.length ?
+                            cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem} />)
+                            :
+                            <span className="empty-message">Your cart is empty</span>
                     }
-                }>GO TO CHECKOUT</CustomButton>
-        </div>
+                </div>
+                <CustomButton
+                    onClick={() => {
+                        history.push('/checkout');
+                        dispatch(toggleCartHidden())
+                    }
+                    }>GO TO CHECKOUT</CustomButton>
+            </div>
     )
 }
 

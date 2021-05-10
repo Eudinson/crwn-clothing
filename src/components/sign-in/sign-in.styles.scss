@@ -17,3 +17,14 @@
         padding-top: 10px;
     }
 }
+
+@media(max-width:900px){
+    .sign-in{
+        width: 90%;
+
+        .buttons{
+            flex-direction: column;
+        }
+    }
+}
+  

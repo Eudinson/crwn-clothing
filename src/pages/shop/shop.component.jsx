@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import CollectiosnOverview from '../../components/collections-overview/collections-overview';
 import CollectionPage from '../collection/collection.component';
+import './shop.styles.scss';
 
 
 const ShopPage = ({ match }) => {

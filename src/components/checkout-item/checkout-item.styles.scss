@@ -6,6 +6,7 @@
     padding: 15px 0;
     font-size: 16px;
     align-items: center;
+    justify-content: space-between;
   
     .image-container {
       width: 23%;
@@ -16,12 +17,7 @@
         height: 100%;
       }
     }
-    .name,
-    .quantity,
-    .price {
-      width: 23%;
-    }
-  
+   
     .quantity {
       display: flex;
 
@@ -42,8 +38,21 @@
     }
   
     .remove-button {
-      padding-left: 12px;
       cursor: pointer;
+      color: red;
     }
   }
   
+  @media(max-width:900px){
+    .checkout-item{
+      flex-direction: column;
+
+      .image-container{
+        width: 50%;
+      }
+
+      .price{
+        display: none;
+      }
+    }
+  }

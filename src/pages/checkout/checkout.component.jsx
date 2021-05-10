@@ -15,6 +15,8 @@ const CheckoutPage = () => {
 
     return (
         <div className="checkout-page">
+            <h1 className="checkout-title">Checkout</h1>
+            
             <div className="checkout-header">
                 <div className="header-block">
                     <span>Product</span>
@@ -44,7 +46,7 @@ const CheckoutPage = () => {
             {
 
                 !currentUser ? 
-                <Link className="option" to="/signin" style={{color:'red', borderBottom:'1px solid red'}}>Please click here sign in to your account.</Link> 
+                <Link className="option" to="/signin" style={{color:'red', borderBottom:'1px solid red', textAlign:'center'}}>Please click here sign in to your account.</Link> 
                 :
                 total === 0
                 ?

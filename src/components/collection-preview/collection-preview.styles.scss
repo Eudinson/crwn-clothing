@@ -2,15 +2,27 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-  
+    height: 100%;
+
     .title {
       font-size: 28px;
+      font-weight: 500;
       margin-bottom: 25px;
     }
   
     .preview {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-gap: 10px;
       justify-content: space-between;
+      margin-bottom: 20px;
     }
   }
+
+  @media(max-width: 900px){
+    .collection-preview{
+      margin: 5px;
+    }
+  }
+
   

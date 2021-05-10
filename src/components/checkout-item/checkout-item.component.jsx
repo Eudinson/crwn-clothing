@@ -20,8 +20,8 @@ const CheckoutItem = ({ cartItem }) => {
                 <div className="arrow" onClick={() => dispatch(addItem(cartItem))}>+</div>
             </span>
             <span className="price">${price}</span>
-            <span className="price">${price * quantity}</span>
-            <div className="remove-button" onClick={() => dispatch(clearItemFromCart(cartItem))}>&#10005;</div>
+            <span className="price-quantity">${price * quantity}</span>
+            <div className="remove-button" onClick={() => dispatch(clearItemFromCart(cartItem))}>Remove item</div>
         </div>
     )
 }

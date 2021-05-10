@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utility';
 import './header.styles.scss';
@@ -10,6 +10,21 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 const Header = () => {
 
+    const [toggle, setToggle] = useState(false);
+    let [windowSize, setWindowSize] = useState('');
+
+    const setToggleState = () => {
+        setToggle(toggleState => !toggleState)
+    }
+
+    const toggleMenu = () => {
+        return !toggle ? 'options' : 'options toggleMenu'
+    }
+    
+    window.addEventListener('resize', () => {
+        setWindowSize(winSize => winSize= window.innerWidth)
+    })
+
     // const currentUserState = useSelector(state => state)
     const currentUser = selectCurrentUser(useSelector(state => state))
 
@@ -20,25 +35,32 @@ const Header = () => {
         <div className="header">
             <Link to="/">
                 <div className="logo-container">
-                    <span>Demo Shop</span>
+                    <span className="logo">Demo Shop</span>
                 </div>
             </Link>
-            <div className="options">
-                <Link className="option" to="/">
+            <div className={ toggleMenu() }>
+                <Link className="option" to="/" onClick={setToggleState}>
                     MENU
                 </Link>
-                <Link className="option" to="/shop">
+                <Link className="option" to="/shop" onClick={setToggleState}>
                     SHOP
                 </Link>
                 {
                     currentUser ?
                         <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
                         :
-                        <Link className="option" to="/signin">SIGN IN</Link>
+                        <Link className="option" to="/signin" onClick={setToggleState}>SIGN IN</Link >
                 }
-                <CartIcon />
+                <div onClick={setToggleState}>
+                    { windowSize <= 900 ? <Link to='/checkout'> <CartIcon /> </Link> : <CartIcon/>}
+                </div>
             </div>
             {!cartShowHide && <CartDropdown />}
+            <div className="burger" onClick={setToggleState}>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
         </div>
     )
 }
