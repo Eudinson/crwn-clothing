@@ -61,7 +61,7 @@ const Header = () => {
             </div>
             {!cartShowHide && <CartDropdown />}
             <div className="cart-icon-mobile">
-                <CartIcon />
+                <Link to='/checkout'> <CartIcon /> </Link>
             </div>
             <div className="burger" onClick={setToggleState}>
                 <div className="line"></div>
