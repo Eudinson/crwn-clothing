@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/demo-clothing/static/css/main.be268645.chunk.css",
-    "main.js": "/demo-clothing/static/js/main.aa2a7856.chunk.js",
-    "main.js.map": "/demo-clothing/static/js/main.aa2a7856.chunk.js.map",
+    "main.js": "/demo-clothing/static/js/main.e3f65902.chunk.js",
+    "main.js.map": "/demo-clothing/static/js/main.e3f65902.chunk.js.map",
     "runtime-main.js": "/demo-clothing/static/js/runtime-main.3e8bad38.js",
     "runtime-main.js.map": "/demo-clothing/static/js/runtime-main.3e8bad38.js.map",
     "static/js/2.541086d2.chunk.js": "/demo-clothing/static/js/2.541086d2.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.3e8bad38.js",
     "static/js/2.541086d2.chunk.js",
     "static/css/main.be268645.chunk.css",
-    "static/js/main.aa2a7856.chunk.js"
+    "static/js/main.e3f65902.chunk.js"
   ]
 }
