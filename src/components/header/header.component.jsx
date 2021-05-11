@@ -20,13 +20,13 @@ const Header = () => {
     const toggleMenu = () => {
         return !toggle ? 'options' : 'options toggleMenu'
     }
-    
+
     window.addEventListener('resize', () => {
-        setWindowSize(winSize => winSize= window.innerWidth)
+        setWindowSize(winSize => winSize = window.innerWidth)
     })
 
     window.addEventListener('load', () => {
-        setWindowSize(winSize => winSize= window.innerWidth)
+        setWindowSize(winSize => winSize = window.innerWidth)
     })
 
     // const currentUserState = useSelector(state => state)
@@ -42,7 +42,7 @@ const Header = () => {
                     <span className="logo">Demo Shop</span>
                 </div>
             </Link>
-            <div className={ toggleMenu() }>
+            <div className={toggleMenu()}>
                 <Link className="option" to="/" onClick={setToggleState}>
                     MENU
                 </Link>
@@ -56,10 +56,13 @@ const Header = () => {
                         <Link className="option" to="/signin" onClick={setToggleState}>SIGN IN</Link >
                 }
                 <div onClick={setToggleState}>
-                    { windowSize <= 900 ? <Link to='/checkout'> <CartIcon /> </Link> : <CartIcon/>}
+                    {windowSize <= 900 ? <Link to='/checkout'> <CartIcon /> </Link> : <CartIcon />}
                 </div>
             </div>
             {!cartShowHide && <CartDropdown />}
+            <div className="cart-icon-mobile">
+                <CartIcon />
+            </div>
             <div className="burger" onClick={setToggleState}>
                 <div className="line"></div>
                 <div className="line"></div>

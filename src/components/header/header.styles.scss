@@ -48,6 +48,10 @@
         margin: 2px;
       }
     }
+    
+    .cart-icon-mobile{
+      display: none;
+    }
 
   }
 
@@ -95,7 +99,45 @@
       .toggleMenu{
         transform: translateX(0);
       }
+
+      .cart-icon-mobile{
+        display: block;
+        position: absolute;
+        right: 10%;
+        top: 13%;
+      }
     }
 
+  }
+
+  
+  @media(max-width:600px){
+
+    .header{
+
+      .cart-icon-mobile{
+        right: 11%;
+      }
+    }
+  }
+
+  @media(max-width:450px){
+
+    .header{
+
+      .cart-icon-mobile{
+        right: 13%;
+      }
+    }
+  }
+
+  @media(max-width:350px){
+
+    .header{
+
+      .cart-icon-mobile{
+        right: 15%;
+      }
+    }
   }
   
