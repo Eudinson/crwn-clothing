@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/demo-clothing/static/css/main.be268645.chunk.css",
-    "main.js": "/demo-clothing/static/js/main.e3f65902.chunk.js",
-    "main.js.map": "/demo-clothing/static/js/main.e3f65902.chunk.js.map",
-    "runtime-main.js": "/demo-clothing/static/js/runtime-main.3e8bad38.js",
-    "runtime-main.js.map": "/demo-clothing/static/js/runtime-main.3e8bad38.js.map",
-    "static/js/2.541086d2.chunk.js": "/demo-clothing/static/js/2.541086d2.chunk.js",
-    "static/js/2.541086d2.chunk.js.map": "/demo-clothing/static/js/2.541086d2.chunk.js.map",
-    "index.html": "/demo-clothing/index.html",
-    "static/css/main.be268645.chunk.css.map": "/demo-clothing/static/css/main.be268645.chunk.css.map",
-    "static/js/2.541086d2.chunk.js.LICENSE.txt": "/demo-clothing/static/js/2.541086d2.chunk.js.LICENSE.txt",
-    "static/media/shopping-bag.a688874f.svg": "/demo-clothing/static/media/shopping-bag.a688874f.svg"
+    "main.css": "/static/css/main.be268645.chunk.css",
+    "main.js": "/static/js/main.9f684f90.chunk.js",
+    "main.js.map": "/static/js/main.9f684f90.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e09c0a19.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e09c0a19.js.map",
+    "static/js/2.c6e20db6.chunk.js": "/static/js/2.c6e20db6.chunk.js",
+    "static/js/2.c6e20db6.chunk.js.map": "/static/js/2.c6e20db6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.be268645.chunk.css.map": "/static/css/main.be268645.chunk.css.map",
+    "static/js/2.c6e20db6.chunk.js.LICENSE.txt": "/static/js/2.c6e20db6.chunk.js.LICENSE.txt",
+    "static/media/shopping-bag.a688874f.svg": "/static/media/shopping-bag.a688874f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3e8bad38.js",
-    "static/js/2.541086d2.chunk.js",
+    "static/js/runtime-main.e09c0a19.js",
+    "static/js/2.c6e20db6.chunk.js",
     "static/css/main.be268645.chunk.css",
-    "static/js/main.e3f65902.chunk.js"
+    "static/js/main.9f684f90.chunk.js"
   ]
 }
